@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+    /* Base Colors */
+    --color-bg-dark: #0A1931;
+    --color-text-white: #F6FAFD;
+    --color-deep-surface: #1A3D63;
+    --color-card-dark: rgba(26, 61, 99, 0.4);
+
+    /* Desktop Specific Palette */
+    --color-primary: #4A7FA7;
+    --color-accent-light: #B3CFE5;
+    --color-accent-deep: #1A3D63;
+    --color-off-white: #F6FAFD;
+    
+    /* Fonts */
+    --font-display: "Space Grotesk", sans-serif;
+}
+
+/* Custom Utilities for v4 if needed, though usually automatic */
+
+/* Shared Styles */
+.glass-nav {
+    background: rgba(10, 25, 49, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(179, 207, 229, 0.1);
+}
+
+/* Desktop Specific Styles */
+.etched-border {
+    border: 1px solid rgba(179, 207, 229, 0.15);
+}
+.hero-pattern {
+    background-image: radial-gradient(circle at 2px 2px, rgba(179, 207, 229, 0.08) 1px, transparent 0);
+    background-size: 40px 40px;
+}
+.glass-card {
+    background: rgba(26, 61, 99, 0.2);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(179, 207, 229, 0.1);
+}
+
+/* Mobile Specific Styles */
+.project-card-mobile {
+    background: #1A3D63;
+    border: 1px solid rgba(179, 207, 229, 0.1);
+}
+.custom-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.custom-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@layer base {
+    body {
+        font-family: 'Space Grotesk', sans-serif;
+        background-color: var(--color-bg-dark);
+        color: var(--color-text-white);
+        -webkit-tap-highlight-color: transparent;
+    }
+}
