@@ -1,0 +1,95 @@
+{
+  "nav": {
+    "projects": "Projetos",
+    "services": "Serviços",
+    "stack": "Tecnologias",
+    "contact": "Contato"
+  },
+  "hero": {
+    "status": "Disponível para Projetos",
+    "title_mobile_prefix": "Transformando",
+    "title_mobile_highlight": "Lógica",
+    "title_mobile_suffix": "em Experiências Web",
+    "subtitle_mobile": "Desenvolvedor Universitário especializado em SaaS e ferramentas internas para equipes de alto crescimento.",
+    "cta_primary_mobile": "Preciso de uma solução",
+    "cta_secondary_mobile": "Ver perfil",
+    "status_desktop": "Disponível para novos projetos",
+    "title_desktop_prefix": "Construo aplicações web que resolvem problemas de",
+    "title_desktop_highlight": "negócios reais",
+    "title_desktop_suffix": ".",
+    "subtitle_desktop": "Desenvolvedor de software especializado em arquitetura SaaS de alto impacto, painéis personalizados e sistemas empresariais.",
+    "cta_primary_desktop": "Ver Projetos",
+    "cta_secondary_desktop": "Baixar CV"
+  },
+  "sections": {
+    "tech_stack_title_mobile": "Tecnologias Principais",
+    "tech_stack_title_desktop": "Stack Tecnológico",
+    "tech_stack_subtitle_desktop": "Utilizo ferramentas modernas e testadas para garantir que as aplicações sejam rápidas, seguras e sustentáveis.",
+    "services_business_title": "Para Empresas",
+    "services_business_desc": "Precisa de uma ferramenta personalizada para otimizar operações? Desenvolvo plataformas SaaS robustas e sistemas internos focados no ROI.",
+    "services_business_list": ["Arquitetura SaaS Escalável", "CRM e Dashboards Personalizados", "Integrações de API"],
+    "services_recruiters_title": "Para Recrutadores",
+    "services_recruiters_desc": "Procura um desenvolvedor que entenda de código limpo? Priorizo a competência técnica e a escalabilidade.",
+    "services_recruiters_list": ["Domínio de Full-Stack Moderno", "Arquitetura Limpa", "Metodologias Ágeis"],
+    "services_specialized_title": "Serviços Especializados",
+    "projects_title": "Projetos em Destaque",
+    "experience_title": "Experiência e Educação"
+  },
+  "footer": {
+    "cta_title": "Pronto para automatizar sua lógica?",
+    "cta_text": "Atualmente aceitando novos projetos freelance e oportunidades de estágio para 2024.",
+    "copyright_mobile": "© 2024 Portfólio do Desenvolvedor — Construído com Lógica",
+    "copyright_desktop": "© 2024 Construído com precisão.",
+    "description_desktop": "Construindo software para a próxima geração de negócios."
+  },
+  "data": {
+    "services": [
+        { "title": "Desenvolvimento SaaS", "description": "Desenvolvimento integral de aplicações web por assinatura com segurança multi-inquilino robusta.", "icon": "cloud" },
+        { "title": "Painéis Personalizados", "description": "Ferramentas de visualização de dados de alto desempenho que transformam dados complexos.", "icon": "dashboard" },
+        { "title": "Sistemas Empresariais", "description": "Sistemas internos complexos para gestão de cadeia de suprimentos e ERP.", "icon": "hub" }
+    ],
+    "projects_mobile": [
+        { 
+            "title": "InventoryOS Pro", 
+            "category": "Produto SaaS", 
+            "description": "Sistema de gestão de inventarios em tempo real para armazéns distribuídos com reabastecimento preditivo.",
+            "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCy3BfQwefXosCFaBFHQBDX5_IAY_bKL_ktF4ARzwkJTevL-fUvq-MZB7ljYqQJqhx9lke61getMVyxKZH5L_9-EYdI-aQWonUGXrwZw-i920PeCmrz88m9E9wZpp8yeHQYWTfVFBdnDMArpVSbHZVpVm0QAXaHaAv3SY_AmrQ2rBXTwvB3ZD_lQOQwbHRMZuNNp7AfLb-M68RmDkhH9MK0FPMIY3-P74igHhIg51wP-FeKEucV8XztirVcFjIAjuBRLJWwu-1Q0oY",
+            "tags": ["Next.js", "Prisma"]
+        },
+        { 
+            "title": "Nexus CRM", 
+            "category": "Ferramenta Interna", 
+            "description": "Suíte de gestão de relacionamento personalizada projetada especificamente para equipes de logística universitária.",
+            "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCnYPatPtTpuKGlWa5x-dqdyBO12CTc_mx9Dat689Rnr_SYQuzTQQGADf8xZhAm83ywW1xpXnlqAIXwOiglcRE-eOxeLwcNVliX1BGQQAI8rM4W6TTKBsUjpNCMME7mFhd-Lu7MNxJPMRQBleQj-WqDwTD5H3hFtIN7qE1IqNVolUAqukrjQpx0Ajm55DNfqGg9sGM0WXsms3VBFqOhq4F_0iwWqcIfg1TR7alYdCti_h9xtMGH_YA7XyLd704kzVDxNYljFwwGKBs",
+            "tags": ["TypeScript", "Redux"]
+        }
+    ],
+    "projects_desktop": [
+        { 
+            "title": "EventShare", 
+            "category": "SaaS Full-Stack", 
+            "description": "Plataforma integral para organização de eventos corporativos, com colaboração em tempo real e bilhetagem automatizada.",
+            "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCb1JKCVF0dVo3CKCrEWGkmJrP7cqZe84IPy74Lc6JfikJncmHFzwLO5rFyVj3ooDbe_8-UdWfEp9OW7vtdGK3JFZ1qLYrpVjWXvdd6BwjlTwkq0xYzDw6DwzVxGnFcGiEXnQpq4vZ44n8yHJaW7UE4gzp_CBXYzAxBAfeFSuE8VpXK3dk2hCWJoxCE959y_zcHY-8_Kx-nF7bP4wABQV96dctyQ4akUurmLAqfoPWiddMw6q0w92Q91dQ5bXtV9E2NjPiBQt0fZU8",
+            "tags": []
+        },
+        { 
+            "title": "Gestão Escolar", 
+            "category": "Sistema de Gestão", 
+            "description": "Arquitetura de dados complexa para o acompanhamento do progresso estudantil.",
+            "image": "", 
+            "tags": []
+        },
+        { 
+            "title": "Agro-Rastreabilidade", 
+            "category": "Tecnologia Industrial", 
+            "description": "Rastreamento de cadeia de suprimentos inspirado em blockchain.",
+            "image": "", 
+            "tags": ["Node.js", "PostgreSQL"]
+        }
+    ],
+    "experience": [
+        { "year": "2021 — Presente", "role": "Engenharia de Software", "context": "Ciência da Computação" },
+        { "year": "Verão 2023", "role": "Desenvolvedor Web Júnior", "context": "Freelance e Estágios" }
+    ]
+  }
+}

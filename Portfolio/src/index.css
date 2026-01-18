@@ -1,49 +1,94 @@
 @import "tailwindcss";
 
-@theme {
-    /* Base Colors */
-    --color-bg-dark: #0A1931;
-    --color-text-white: #F6FAFD;
-    --color-deep-surface: #1A3D63;
-    --color-card-dark: rgba(26, 61, 99, 0.4);
+/* 
+  Define Theme Variables as standard CSS Custom Properties 
+  so we can swap their values based on the [data-theme] attribute.
+*/
+:root {
+    /* DEFAULT (DARK) THEME VALUES */
+    --base-bg-dark: #0A1931;
+    --base-text-white: #F6FAFD;
+    --base-deep-surface: #1A3D63;
+    --base-card-dark: rgba(26, 61, 99, 0.4);
+    
+    --base-primary: #4A7FA7;
+    --base-accent-light: #B3CFE5;
+    --base-accent-deep: #1A3D63;
+    --base-off-white: #F6FAFD;
 
-    /* Desktop Specific Palette */
-    --color-primary: #4A7FA7;
-    --color-accent-light: #B3CFE5;
-    --color-accent-deep: #1A3D63;
-    --color-off-white: #F6FAFD;
+    /* Semantic mapping for glass effects */
+    --glass-nav-bg: rgba(10, 25, 49, 0.8);
+    --glass-nav-border: rgba(179, 207, 229, 0.1);
+    --glass-card-bg: rgba(26, 61, 99, 0.2);
+    --glass-card-border: rgba(179, 207, 229, 0.1);
+    
+    /* Decoration */
+    --hero-pattern-color: rgba(179, 207, 229, 0.08);
+}
+
+:root[data-theme="light"] {
+    /* LIGHT THEME OVERRIDES */
+    --base-bg-dark: #F2F6FA;        /* Light Grey/Blue Background */
+    --base-text-white: #0A1931;     /* Dark Blue Text */
+    --base-deep-surface: #FFFFFF;    /* White Surface */
+    --base-card-dark: rgba(255, 255, 255, 0.6);
+    
+    --base-primary: #2563EB;        /* Brighter Blue for Primary */
+    --base-accent-light: #4A7FA7;   /* Darker Blue for Accent (to contrast with light bg) */
+    --base-accent-deep: #DBEAFE;    /* Very Light Blue for secondary surfaces */
+    --base-off-white: #1E293B;      /* Dark Slate for generic text */
+
+    /* Glass Effects for Light Mode */
+    --glass-nav-bg: rgba(242, 246, 250, 0.8);
+    --glass-nav-border: rgba(74, 127, 167, 0.1);
+    --glass-card-bg: rgba(255, 255, 255, 0.5);
+    --glass-card-border: rgba(74, 127, 167, 0.1);
+
+     /* Decoration */
+     --hero-pattern-color: rgba(37, 99, 235, 0.05);
+}
+
+@theme {
+    /* Map Tailwind Utilities to our Dynamic Variables */
+    --color-bg-dark: var(--base-bg-dark);
+    --color-text-white: var(--base-text-white);
+    --color-deep-surface: var(--base-deep-surface);
+    --color-card-dark: var(--base-card-dark);
+
+    --color-primary: var(--base-primary);
+    --color-accent-light: var(--base-accent-light);
+    --color-accent-deep: var(--base-accent-deep);
+    --color-off-white: var(--base-off-white);
     
     /* Fonts */
     --font-display: "Space Grotesk", sans-serif;
 }
 
-/* Custom Utilities for v4 if needed, though usually automatic */
-
-/* Shared Styles */
+/* Shared Styles using variables */
 .glass-nav {
-    background: rgba(10, 25, 49, 0.8);
+    background: var(--glass-nav-bg);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(179, 207, 229, 0.1);
+    border-bottom: 1px solid var(--glass-nav-border);
 }
 
 /* Desktop Specific Styles */
 .etched-border {
-    border: 1px solid rgba(179, 207, 229, 0.15);
+    border: 1px solid var(--glass-card-border);
 }
 .hero-pattern {
-    background-image: radial-gradient(circle at 2px 2px, rgba(179, 207, 229, 0.08) 1px, transparent 0);
+    background-image: radial-gradient(circle at 2px 2px, var(--hero-pattern-color) 1px, transparent 0);
     background-size: 40px 40px;
 }
 .glass-card {
-    background: rgba(26, 61, 99, 0.2);
+    background: var(--glass-card-bg);
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(179, 207, 229, 0.1);
+    border: 1px solid var(--glass-card-border);
 }
 
 /* Mobile Specific Styles */
 .project-card-mobile {
-    background: #1A3D63;
-    border: 1px solid rgba(179, 207, 229, 0.1);
+    background: var(--base-deep-surface); /* Uses mapped variable */
+    border: 1px solid var(--glass-card-border);
 }
 .custom-scrollbar::-webkit-scrollbar {
     display: none;
@@ -59,5 +104,6 @@
         background-color: var(--color-bg-dark);
         color: var(--color-text-white);
         -webkit-tap-highlight-color: transparent;
+        transition: background-color 0.3s ease, color 0.3s ease; /* Smooth Transition */
     }
 }

@@ -1,0 +1,95 @@
+{
+  "nav": {
+    "projects": "Projects",
+    "services": "Services",
+    "stack": "Technologies",
+    "contact": "Contact"
+  },
+  "hero": {
+    "status": "Available for Projects",
+    "title_mobile_prefix": "Transforming",
+    "title_mobile_highlight": "Logic",
+    "title_mobile_suffix": "into Web Experiences",
+    "subtitle_mobile": "University Developer specialized in SaaS and internal tools for high-growth teams.",
+    "cta_primary_mobile": "I need a solution",
+    "cta_secondary_mobile": "View profile",
+    "status_desktop": "Available for new projects",
+    "title_desktop_prefix": "I build web applications that solve real",
+    "title_desktop_highlight": "business problems",
+    "title_desktop_suffix": ".",
+    "subtitle_desktop": "Software Developer specialized in high-impact SaaS architecture, custom dashboards, and enterprise systems.",
+    "cta_primary_desktop": "View Projects",
+    "cta_secondary_desktop": "Download CV"
+  },
+  "sections": {
+    "tech_stack_title_mobile": "Core Technologies",
+    "tech_stack_title_desktop": "Tech Stack",
+    "tech_stack_subtitle_desktop": "I use modern and battle-tested tools to ensure applications are fast, secure, and maintainable.",
+    "services_business_title": "For Businesses",
+    "services_business_desc": "Need a custom tool to optimize operations? I develop robust SaaS platforms and internal systems focused on ROI.",
+    "services_business_list": ["Scalable SaaS Architecture", "Custom CRM & Dashboards", "API Integrations"],
+    "services_recruiters_title": "For Recruiters",
+    "services_recruiters_desc": "Looking for a developer who understands clean code? I prioritize technical competence and scalability.",
+    "services_recruiters_list": ["Modern Full-Stack Mastery", "Clean Architecture", "Agile Methodologies"],
+    "services_specialized_title": "Specialized Services",
+    "projects_title": "Featured Projects",
+    "experience_title": "Experience & Education"
+  },
+  "footer": {
+    "cta_title": "Ready to automate your logic?",
+    "cta_text": "Currently accepting new freelance projects and internship opportunities for 2024.",
+    "copyright_mobile": "© 2024 Developer Portfolio — Built with Logic",
+    "copyright_desktop": "© 2024 Built with precision.",
+    "description_desktop": "Building software for the next generation of businesses."
+  },
+  "data": {
+    "services": [
+        { "title": "SaaS Development", "description": "Comprehensive subscription-based web application development with robust multi-tenant security.", "icon": "cloud" },
+        { "title": "Custom Dashboards", "description": "High-performance data visualization tools that transform complex data.", "icon": "dashboard" },
+        { "title": "Enterprise Systems", "description": "Complex internal systems for supply chain management and ERP.", "icon": "hub" }
+    ],
+    "projects_mobile": [
+        { 
+            "title": "InventoryOS Pro", 
+            "category": "SaaS Product", 
+            "description": "Real-time inventory management system for distributed warehouses with predictive replenishment.",
+            "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCy3BfQwefXosCFaBFHQBDX5_IAY_bKL_ktF4ARzwkJTevL-fUvq-MZB7ljYqQJqhx9lke61getMVyxKZH5L_9-EYdI-aQWonUGXrwZw-i920PeCmrz88m9E9wZpp8yeHQYWTfVFBdnDMArpVSbHZVpVm0QAXaHaAv3SY_AmrQ2rBXTwvB3ZD_lQOQwbHRMZuNNp7AfLb-M68RmDkhH9MK0FPMIY3-P74igHhIg51wP-FeKEucV8XztirVcFjIAjuBRLJWwu-1Q0oY",
+            "tags": ["Next.js", "Prisma"]
+        },
+        { 
+            "title": "Nexus CRM", 
+            "category": "Internal Tool", 
+            "description": "Custom relationship management suite designed specifically for university logistics teams.",
+            "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCnYPatPtTpuKGlWa5x-dqdyBO12CTc_mx9Dat689Rnr_SYQuzTQQGADf8xZhAm83ywW1xpXnlqAIXwOiglcRE-eOxeLwcNVliX1BGQQAI8rM4W6TTKBsUjpNCMME7mFhd-Lu7MNxJPMRQBleQj-WqDwTD5H3hFtIN7qE1IqNVolUAqukrjQpx0Ajm55DNfqGg9sGM0WXsms3VBFqOhq4F_0iwWqcIfg1TR7alYdCti_h9xtMGH_YA7XyLd704kzVDxNYljFwwGKBs",
+            "tags": ["TypeScript", "Redux"]
+        }
+    ],
+    "projects_desktop": [
+        { 
+            "title": "EventShare", 
+            "category": "Full-Stack SaaS", 
+            "description": "Comprehensive platform for corporate event organization, with real-time collaboration and automated ticketing.",
+            "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCb1JKCVF0dVo3CKCrEWGkmJrP7cqZe84IPy74Lc6JfikJncmHFzwLO5rFyVj3ooDbe_8-UdWfEp9OW7vtdGK3JFZ1qLYrpVjWXvdd6BwjlTwkq0xYzDw6DwzVxGnFcGiEXnQpq4vZ44n8yHJaW7UE4gzp_CBXYzAxBAfeFSuE8VpXK3dk2hCWJoxCE959y_zcHY-8_Kx-nF7bP4wABQV96dctyQ4akUurmLAqfoPWiddMw6q0w92Q91dQ5bXtV9E2NjPiBQt0fZU8",
+            "tags": []
+        },
+        { 
+            "title": "School Management", 
+            "category": "Management System", 
+            "description": "Complex data architecture for tracking student progress.",
+            "image": "", 
+            "tags": []
+        },
+        { 
+            "title": "Agro-Traceability", 
+            "category": "Industrial Tech", 
+            "description": "Supply chain tracking inspired by blockchain.",
+            "image": "", 
+            "tags": ["Node.js", "PostgreSQL"]
+        }
+    ],
+    "experience": [
+        { "year": "2021 — Present", "role": "Software Engineering", "context": "Computer Science" },
+        { "year": "Summer 2023", "role": "Junior Web Developer", "context": "Freelance & Internships" }
+    ]
+  }
+}

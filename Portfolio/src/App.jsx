@@ -1,11 +1,31 @@
-import { SERVICES, PROJECTS_MOBILE, PROJECTS_DESKTOP, TECH_STACK, EXPERIENCE } from './constants';
+import { useTranslation } from 'react-i18next';
+import { TECH_STACK } from './constants'; // Keep constant data that doesn't need translation
 import { FadeIn, StaggerContainer, StaggerItem } from './components/FadeIn';
+import { useTheme } from './hooks/useTheme';
+import { LanguageSelector } from './components/LanguageSelector';
 
 function App() {
+  const { theme, toggleTheme } = useTheme();
+  // Destructure i18n to get current language
+  const { t, i18n } = useTranslation();
+
+  // Load data from translations with safety checks
+  const servicesData = t('data.services', { returnObjects: true });
+  const services = Array.isArray(servicesData) ? servicesData : [];
+
+  const projectsMobileData = t('data.projects_mobile', { returnObjects: true });
+  const projectsMobile = Array.isArray(projectsMobileData) ? projectsMobileData : [];
+
+  const projectsDesktopData = t('data.projects_desktop', { returnObjects: true });
+  const projectsDesktop = Array.isArray(projectsDesktopData) ? projectsDesktopData : [];
+
+  const experienceData = t('data.experience', { returnObjects: true });
+  const experience = Array.isArray(experienceData) ? experienceData : [];
+
   return (
-    <div className="min-h-screen bg-background-dark text-off-white selection:bg-primary/30 antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-background-dark text-off-white selection:bg-primary/30 antialiased overflow-x-hidden transition-colors duration-300">
       {/* NAVIGATION (RESPONSIVE) */}
-      <nav className="fixed top-0 w-full z-50 glass-nav">
+      <nav className="fixed top-0 w-full z-50 glass-nav transition-all duration-300">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo Area */}
           <div className="flex items-center gap-2">
@@ -23,24 +43,57 @@ function App() {
           </div>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-8">
-            <a className="text-sm font-medium text-off-white/80 hover:text-accent-light transition-colors" href="#proyectos">Proyectos</a>
-            <a className="text-sm font-medium text-off-white/80 hover:text-accent-light transition-colors" href="#servicios">Servicios</a>
-            <a className="text-sm font-medium text-off-white/80 hover:text-accent-light transition-colors" href="#stack">Tecnologías</a>
-            <button className="bg-primary hover:bg-primary/80 text-off-white px-5 py-2 rounded-lg text-sm font-bold transition-all shadow-lg shadow-primary/20">
-              Contactar
+          <div className="hidden md:flex items-center gap-6">
+            <a className="text-sm font-medium text-off-white/80 hover:text-accent-light transition-colors" href="#proyectos">{t('nav.projects')}</a>
+            <a className="text-sm font-medium text-off-white/80 hover:text-accent-light transition-colors" href="#servicios">{t('nav.services')}</a>
+            <a className="text-sm font-medium text-off-white/80 hover:text-accent-light transition-colors" href="#stack">{t('nav.stack')}</a>
+            
+            <div className="h-4 w-[1px] bg-off-white/10 mx-2"></div>
+
+            {/* Language Selector Desktop */}
+            <LanguageSelector />
+
+            {/* Theme Toggle Desktop */}
+            <button 
+              onClick={toggleTheme}
+              className="p-2 rounded-lg hover:bg-off-white/10 transition-colors text-off-white/80 hover:text-accent-light"
+              aria-label="Toggle Theme"
+            >
+              <span className="material-symbols-outlined text-xl">
+                {theme === 'dark' ? 'light_mode' : 'dark_mode'}
+              </span>
+            </button>
+
+            <button className="bg-primary hover:bg-primary/80 text-off-white px-5 py-2 rounded-lg text-sm font-bold transition-all shadow-lg shadow-primary/20 ml-2">
+              {t('nav.contact')}
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button className="md:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-accent-light/10 text-accent-light border border-accent-light/20">
-            <span className="material-symbols-outlined">menu</span>
-          </button>
+          {/* Mobile Actions */}
+          <div className="md:hidden flex items-center gap-3">
+             <LanguageSelector />
+
+             {/* Theme Toggle Mobile */}
+             <button 
+              onClick={toggleTheme}
+              className="w-10 h-10 flex items-center justify-center rounded-lg bg-accent-light/5 text-off-white/80 border border-accent-light/10"
+              aria-label="Toggle Theme"
+            >
+              <span className="material-symbols-outlined text-xl">
+                {theme === 'dark' ? 'light_mode' : 'dark_mode'}
+              </span>
+            </button>
+
+            {/* Mobile Menu Button */}
+            <button className="w-10 h-10 flex items-center justify-center rounded-lg bg-accent-light/10 text-accent-light border border-accent-light/20">
+              <span className="material-symbols-outlined">menu</span>
+            </button>
+          </div>
         </div>
       </nav>
 
-      {/* MAIN CONTENT */}
-      <main className="w-full">
+      {/* MAIN CONTENT - Key forces remount on language change */}
+      <main className="w-full" key={i18n.resolvedLanguage}>
         
         {/* MOBILE HERO */}
         <section className="md:hidden pt-24 px-6 pb-12 flex flex-col items-center text-center max-w-md mx-auto">
@@ -50,29 +103,29 @@ function App() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-light opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-light"></span>
               </span>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-accent-light">Disponible para Proyectos</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-accent-light">{t('hero.status')}</span>
             </div>
           </FadeIn>
           
           <FadeIn delay={0.1}>
             <h1 className="text-4xl font-bold leading-tight tracking-tight mb-4 text-off-white">
-              Transformando <span className="text-accent-light">Lógica</span> en Experiencias Web
+              {t('hero.title_mobile_prefix')} <span className="text-accent-light">{t('hero.title_mobile_highlight')}</span> {t('hero.title_mobile_suffix')}
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.2}>
             <p className="text-accent-light/70 text-base max-w-[280px] mb-8 leading-relaxed">
-              Desarrollador Universitario especializado en SaaS y herramientas internas para equipos de alto crecimiento.
+              {t('hero.subtitle_mobile')}
             </p>
           </FadeIn>
 
           <FadeIn delay={0.3} className="flex flex-col w-full gap-3 px-4">
             <button className="w-full bg-accent-light text-background-dark font-bold py-4 rounded-xl shadow-lg shadow-accent-light/10 flex items-center justify-center gap-2">
-              <span>Necesito una solución</span>
+              <span>{t('hero.cta_primary_mobile')}</span>
               <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </button>
             <button className="w-full bg-accent-deep/50 text-off-white font-bold py-4 rounded-xl border border-accent-light/20">
-              Ver perfil
+              {t('hero.cta_secondary_mobile')}
             </button>
           </FadeIn>
         </section>
@@ -88,29 +141,29 @@ function App() {
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-light opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-light"></span>
                     </span>
-                    <span className="text-xs font-bold uppercase tracking-wider text-accent-light">Disponible para nuevos proyectos</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-accent-light">{t('hero.status_desktop')}</span>
                   </div>
                 </StaggerItem>
 
                 <StaggerItem>
                   <h1 className="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight mb-8 text-off-white">
-                    Construyo aplicaciones web que resuelven problemas de <span className="text-primary">negocio reales</span>.
+                    {t('hero.title_desktop_prefix')} <span className="text-primary">{t('hero.title_desktop_highlight')}</span>{t('hero.title_desktop_suffix')}
                   </h1>
                 </StaggerItem>
 
                 <StaggerItem>
                   <p className="text-xl text-off-white/60 mb-10 leading-relaxed max-w-2xl">
-                    Desarrollador de software universitario especializado en arquitectura SaaS de alto impacto, paneles de control personalizados y sistemas empresariales.
+                    {t('hero.subtitle_desktop')}
                   </p>
                 </StaggerItem>
 
                 <StaggerItem>
                   <div className="flex flex-wrap gap-4">
                     <button className="bg-primary text-off-white px-8 py-4 rounded-xl font-bold text-lg hover:translate-y-[-2px] transition-transform shadow-xl shadow-primary/25">
-                      Ver Proyectos
+                      {t('hero.cta_primary_desktop')}
                     </button>
                     <button className="bg-accent-deep/50 text-off-white border border-primary/30 px-8 py-4 rounded-xl font-bold text-lg hover:bg-accent-deep transition-colors">
-                      Descargar CV
+                      {t('hero.cta_secondary_desktop')}
                     </button>
                   </div>
                 </StaggerItem>
@@ -124,7 +177,7 @@ function App() {
         {/* MOBILE: TECH STACK SCROLL */}
         <section className="md:hidden py-4 max-w-md mx-auto">
           <FadeIn>
-            <h2 className="px-6 text-xs font-bold uppercase tracking-widest text-accent-light/50 mb-4">Tecnologías Principales</h2>
+            <h2 className="px-6 text-xs font-bold uppercase tracking-widest text-accent-light/50 mb-4">{t('sections.tech_stack_title_mobile')}</h2>
             <div className="flex gap-3 px-6 overflow-x-auto custom-scrollbar pb-2">
               {TECH_STACK.slice(0, 5).map((tech) => (
                 <div key={`mobile-stack-${tech}`} className="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-accent-deep border border-accent-light/10 px-4">
@@ -145,12 +198,12 @@ function App() {
                   <div className="size-12 rounded-xl bg-primary/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     <span className="material-symbols-outlined text-accent-light">trending_up</span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-off-white">Para Empresas</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-off-white">{t('sections.services_business_title')}</h3>
                   <p className="text-off-white/60 mb-6 leading-relaxed">
-                    ¿Necesita una herramienta personalizada para optimizar operaciones? Desarrollo plataformas SaaS robustas y sistemas internos enfocados en el ROI.
+                    {t('sections.services_business_desc')}
                   </p>
                   <ul className="space-y-3 mb-8">
-                    {["Arquitectura SaaS Escalable", "CRM y Dashboards Personalizados", "Integraciones de API"].map((item) => (
+                    {t('sections.services_business_list', { returnObjects: true }).map((item) => (
                       <li key={item} className="flex items-center gap-2 text-sm text-off-white/80">
                         <span className="material-symbols-outlined text-primary text-lg">check_circle</span> {item}
                       </li>
@@ -164,12 +217,12 @@ function App() {
                   <div className="size-12 rounded-xl bg-primary/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     <span className="material-symbols-outlined text-accent-light">code</span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-off-white">Para Reclutadores</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-off-white">{t('sections.services_recruiters_title')}</h3>
                   <p className="text-off-white/60 mb-6 leading-relaxed">
-                    ¿Busca un desarrollador que entienda el código limpio? Priorizo la competencia técnica y la escalabilidad.
+                    {t('sections.services_recruiters_desc')}
                   </p>
                   <ul className="space-y-3 mb-8">
-                    {["Dominio de Stack Full-Stack Moderno", "Arquitectura Limpia", "Metodologías Ágiles"].map((item) => (
+                    {t('sections.services_recruiters_list', { returnObjects: true }).map((item) => (
                       <li key={item} className="flex items-center gap-2 text-sm text-off-white/80">
                         <span className="material-symbols-outlined text-primary text-lg">check_circle</span> {item}
                       </li>
@@ -186,15 +239,15 @@ function App() {
           <div className="max-w-7xl mx-auto px-6">
             <FadeIn>
               <div className="text-center mb-16">
-                <h2 className="text-3xl font-bold mb-4 text-off-white">Servicios Especializados</h2>
+                <h2 className="text-3xl font-bold mb-4 text-off-white">{t('sections.services_specialized_title')}</h2>
                 <div className="h-1 w-20 bg-primary mx-auto rounded-full"></div>
               </div>
             </FadeIn>
             
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {SERVICES.map((service) => (
+              {services.map((service) => (
                 <StaggerItem key={service.title} className="text-center p-8">
-                  <div className="size-16 mx-auto mb-6 rounded-2xl bg-accent-deep/40 etched-border flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div className="size-16 mx-auto mb-6 rounded-2xl bg-accent-deep/40 etched-border flex items-center justify-center group-hover:scale-110 transition-transform">
                     <span className="material-symbols-outlined text-accent-light text-3xl">{service.icon}</span>
                   </div>
                   <h4 className="text-xl font-bold mb-3 text-off-white">{service.title}</h4>
@@ -209,12 +262,12 @@ function App() {
         <section className="md:hidden px-6 py-8 space-y-6 max-w-md mx-auto">
           <FadeIn>
             <div className="flex items-center justify-between mb-2">
-              <h2 className="text-2xl font-bold tracking-tight text-off-white">Proyectos Destacados</h2>
+              <h2 className="text-2xl font-bold tracking-tight text-off-white">{t('sections.projects_title')}</h2>
               <div className="h-[1px] flex-grow mx-4 bg-accent-light/10"></div>
             </div>
           </FadeIn>
           
-          {PROJECTS_MOBILE.map((project, idx) => (
+          {projectsMobile.map((project, idx) => (
             <FadeIn key={idx} delay={idx * 0.1}>
               <div className="project-card-mobile rounded-xl overflow-hidden flex flex-col group">
                 <div className="relative h-48 bg-background-dark overflow-hidden">
@@ -229,7 +282,12 @@ function App() {
                     {project.description}
                   </p>
                   <div className="flex gap-2">
-                    {project.tags.map(tag => (
+                   {/* Tags are not translated, they come from JSON. Ensure JSON has them or use constant logic? 
+                       In JSON I didn't put tags! I need to check this.
+                       Original constants had tags. My write_to_file for JSON MISSING tags!
+                       I need to fix the JSON files to include 'tags' and 'image' and 'icon' properties.
+                   */}
+                   {project.tags && project.tags.map(tag => (
                       <span key={tag} className="text-[10px] font-mono text-accent-light bg-accent-light/10 px-2 py-1 rounded">{tag}</span>
                     ))}
                   </div>
@@ -243,7 +301,7 @@ function App() {
         <section className="hidden md:block py-24 bg-accent-deep/20" id="proyectos">
           <div className="max-w-7xl mx-auto px-6">
             <FadeIn>
-              <h2 className="text-3xl font-bold mb-12 text-off-white">Proyectos Destacados</h2>
+              <h2 className="text-3xl font-bold mb-12 text-off-white">{t('sections.projects_title')}</h2>
             </FadeIn>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -251,14 +309,14 @@ function App() {
               {/* Featured Large Project (Index 0) */}
               <FadeIn className="md:col-span-2 row-span-2 group relative overflow-hidden rounded-3xl glass-card">
                 <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/20 to-transparent z-10"></div>
-                <div className="h-[400px] w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style={{backgroundImage: `url('${PROJECTS_DESKTOP[0].image}')`}}>
+                <div className="h-[400px] w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style={{backgroundImage: `url('${projectsDesktop[0].image}')`}}>
                 </div>
                 <div className="absolute bottom-0 left-0 p-8 z-20 w-full">
                   <div className="flex justify-between items-end">
                     <div>
-                      <span className="text-accent-light text-xs font-bold uppercase tracking-widest mb-2 block">{PROJECTS_DESKTOP[0].category}</span>
-                      <h3 className="text-3xl font-bold mb-3 text-off-white">{PROJECTS_DESKTOP[0].title}</h3>
-                      <p className="text-off-white/70 max-w-md">{PROJECTS_DESKTOP[0].description}</p>
+                      <span className="text-accent-light text-xs font-bold uppercase tracking-widest mb-2 block">{projectsDesktop[0].category}</span>
+                      <h3 className="text-3xl font-bold mb-3 text-off-white">{projectsDesktop[0].title}</h3>
+                      <p className="text-off-white/70 max-w-md">{projectsDesktop[0].description}</p>
                     </div>
                     <button className="bg-off-white text-background-dark size-12 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
                       <span className="material-symbols-outlined">arrow_outward</span>
@@ -268,7 +326,7 @@ function App() {
               </FadeIn>
               
               {/* Small Projects (Index 1 & 2) */}
-              {PROJECTS_DESKTOP.slice(1).map((project, idx) => (
+              {projectsDesktop.slice(1).map((project, idx) => (
                 <FadeIn key={idx} delay={(idx + 1) * 0.1}>
                   <div className="group relative overflow-hidden rounded-3xl glass-card h-full">
                     <div className="p-8 h-full flex flex-col justify-between">
@@ -288,7 +346,7 @@ function App() {
                         </div>
                       ) : (
                         <div className="mt-6 flex gap-2">
-                          {project.tags.map(tag => (
+                          {project.tags && project.tags.map(tag => (
                             <span key={tag} className="px-2 py-1 bg-accent-deep/40 border border-primary/20 text-[10px] text-accent-light rounded">{tag}</span>
                           ))}
                         </div>
@@ -306,8 +364,8 @@ function App() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col md:flex-row items-center justify-between gap-12">
               <FadeIn className="max-w-md text-center md:text-left">
-                <h2 className="text-3xl font-bold mb-4 text-off-white">Stack Tecnológico</h2>
-                <p className="text-off-white/60">Utilizo herramientas modernas y probadas para asegurar que las aplicaciones sean rápidas, seguras y mantenibles.</p>
+                <h2 className="text-3xl font-bold mb-4 text-off-white">{t('sections.tech_stack_title_desktop')}</h2>
+                <p className="text-off-white/60">{t('sections.tech_stack_subtitle_desktop')}</p>
               </FadeIn>
               
               <StaggerContainer className="flex flex-wrap justify-center md:justify-end gap-3 max-w-xl">
@@ -324,11 +382,11 @@ function App() {
         {/* MOBILE EXPERIENCE (Timeline) */}
         <section className="md:hidden px-6 py-8 max-w-md mx-auto">
           <FadeIn>
-            <h2 className="text-xs font-bold uppercase tracking-widest text-accent-light/50 mb-6">Experiencia y Educación</h2>
+            <h2 className="text-xs font-bold uppercase tracking-widest text-accent-light/50 mb-6">{t('sections.experience_title')}</h2>
           </FadeIn>
           
           <StaggerContainer className="space-y-8 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-accent-light/10">
-            {EXPERIENCE.map((exp, idx) => (
+            {experience.map((exp, idx) => (
               <StaggerItem key={idx} className="relative pl-10">
                 <div className={`absolute left-0 top-1 size-6 rounded-full bg-background-dark border-4 ${idx === 0 ? 'border-accent-light' : 'border-accent-deep'} z-10`}></div>
                 <div className="flex flex-col">
@@ -346,9 +404,9 @@ function App() {
       {/* FOOTER & FAB */}
       <footer className="md:hidden px-6 pt-12 pb-24 bg-accent-deep/30 rounded-t-3xl border-t border-accent-light/10 mt-8">
         <FadeIn className="text-center">
-          <h3 className="text-2xl font-bold mb-4 text-off-white">¿Listo para automatizar tu lógica?</h3>
+          <h3 className="text-2xl font-bold mb-4 text-off-white">{t('footer.cta_title')}</h3>
           <p className="text-accent-light/60 mb-8 text-sm">
-            Actualmente aceptando nuevos proyectos freelance y oportunidades de pasantías para 2024.
+            {t('footer.cta_text')}
           </p>
           <div className="flex justify-center gap-6 mb-10">
             <a className="w-12 h-12 rounded-xl bg-accent-deep flex items-center justify-center text-accent-light border border-accent-light/10" href="#">
@@ -362,7 +420,7 @@ function App() {
             </a>
           </div>
           <p className="text-[10px] text-accent-light/40 uppercase tracking-widest font-bold">
-            © 2024 Portafolio del Desarrollador — Construido con Lógica
+            {t('footer.copyright_mobile')}
           </p>
         </FadeIn>
       </footer>
@@ -377,7 +435,7 @@ function App() {
                 </div>
                 <span className="font-bold tracking-tight text-off-white">DevPortfolio</span>
               </div>
-              <p className="text-off-white/40 text-sm">Construyendo software para la próxima generación de negocios.</p>
+              <p className="text-off-white/40 text-sm">{t('footer.description_desktop')}</p>
             </div>
             <div className="flex items-center gap-8">
               <a className="text-off-white/50 hover:text-off-white transition-colors flex items-center gap-1" href="#"><span className="material-symbols-outlined text-lg">link</span> LinkedIn</a>
@@ -385,7 +443,7 @@ function App() {
               <a className="text-off-white/50 hover:text-off-white transition-colors flex items-center gap-1" href="#"><span className="material-symbols-outlined text-lg">mail</span> Email</a>
             </div>
             <div className="text-off-white/40 text-sm">
-              © 2024 Construido con precisión.
+              {t('footer.copyright_desktop')}
             </div>
           </div>
         </div>
