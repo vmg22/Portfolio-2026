@@ -24,6 +24,8 @@ const slugs = [
     "git",
     "github",
     "visualstudiocode",
+    "typescript",
+    "vercel",
     "jira",
     "postman",
     "docker",
@@ -41,11 +43,11 @@ export function TechCarousel() {
         renderSimpleIcon({
             icon,
             size: 42,
+            minContrastRatio: 1.2,
             aProps: {
                 onClick: (e) => e.preventDefault(),
-                style: { cursor: 'pointer' } // Provide visual cue for interactivity
+                style: { cursor: 'pointer' } 
             },
-            minContrastRatio: 1.2, // Ensure visibility against dark background
         })
     );
 
