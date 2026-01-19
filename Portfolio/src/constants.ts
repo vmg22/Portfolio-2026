@@ -30,14 +30,16 @@ export const SOCIAL_LINKS = {
 };
 
 export const TECH_STACK = [
+    "HTML",
+    "CSS",
+    "JavaScript",
     "React.js",
-    "Next.js",
     "Node.js",
-    "PostgreSQL",
-    "TypeScript",
-    "Tailwind CSS",
-    "Docker",
-    "AWS"
+    "Express",
+    "Python",
+    "MySQL",
+    "Git",
+    "GitHub"
 ];
 
 export const SERVICES: Service[] = [

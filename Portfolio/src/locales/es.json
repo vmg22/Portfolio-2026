@@ -30,111 +30,100 @@
     "title_mobile_prefix": "Transformando",
     "title_mobile_highlight": "Lógica",
     "title_mobile_suffix": "en Experiencias Web",
-    "subtitle_mobile": "Desarrollador Universitario especializado en SaaS y herramientas internas para equipos de alto crecimiento.",
+    "subtitle_mobile": "Programador Full Stack Universitario UTN, apasionado por la tecnología y la eficiencia.",
     "cta_primary_mobile": "Necesito una solución",
     "cta_secondary_mobile": "Ver perfil",
     "status_desktop": "Disponible para nuevos proyectos",
-    "title_desktop_prefix": "Construyo aplicaciones web que resuelven problemas de",
-    "title_desktop_highlight": "negocio reales",
+    "title_desktop_prefix": "Programador Full Stack Universitario",
+    "title_desktop_highlight": "UTN",
     "title_desktop_suffix": ".",
-    "subtitle_desktop": "Desarrollador de software universitario especializado en arquitectura SaaS de alto impacto, paneles de control personalizados y sistemas empresariales.",
+    "subtitle_desktop": "Programador Full Stack Universitario UTN, con sólida experiencia en soporte técnico B2B y B2C, y gran vocación por la tecnología, la eficiencia y el trabajo en equipo.",
     "cta_primary_desktop": "Ver Proyectos",
     "cta_secondary_desktop": "Descargar CV"
   },
   "sections": {
     "tech_stack_title_mobile": "Tecnologías Principales",
     "tech_stack_title_desktop": "Stack Tecnológico",
-    "tech_stack_subtitle_desktop": "Utilizo herramientas modernas y probadas para asegurar que las aplicaciones sean rápidas, seguras y mantenibles.",
-    "services_business_title": "Para Empresas",
-    "services_business_desc": "¿Necesita una herramienta personalizada para optimizar operaciones? Desarrollo plataformas SaaS robustas y sistemas internos enfocados en el ROI.",
-    "services_business_list": ["Arquitectura SaaS Escalable", "CRM y Dashboards Personalizados", "Integraciones de API"],
-    "services_recruiters_title": "Para Reclutadores",
-    "services_recruiters_desc": "¿Busca un desarrollador que entienda el código limpio? Priorizo la competencia técnica y la escalabilidad.",
-    "services_recruiters_list": ["Dominio de Stack Full-Stack Moderno", "Arquitectura Limpia", "Metodologías Ágiles"],
-    "services_specialized_title": "Servicios Especializados",
+    "tech_stack_subtitle_desktop": "Habilidades y competencias en desarrollo web moderno y metodologías ágiles.",
+    "services_business_title": "Desarrollo Full Stack",
+    "services_business_desc": "Soluciones web integrales adaptadas a las necesidades del negocio.",
+    "services_business_list": ["Desarrollo Frontend & Backend", "Bases de Datos SQL", "Automatización y QA"],
+    "services_recruiters_title": "Perfil Profesional",
+    "services_recruiters_desc": "Reconocido por roles de liderazgo natural, sinergia y compromiso.",
+    "services_recruiters_list": ["Liderazgo de Equipos", "Aprendizaje Continuo", "Resolución de Problemas"],
+    "services_specialized_title": "Experiencia Laboral",
     "projects_title": "Proyectos Destacados",
-    "experience_title": "Experiencia y Educación"
+    "experience_title": "Educación y Certificaciones"
   },
   "footer": {
-    "cta_title": "¿Listo para automatizar tu lógica?",
-    "cta_text": "Actualmente aceptando nuevos proyectos freelance y oportunidades de pasantías para 2024.",
-    "copyright_mobile": "© 2024 Portafolio del Desarrollador — Construido con Lógica",
-    "copyright_desktop": "© 2024 Construido con precisión.",
-    "description_desktop": "Construyendo software para la próxima generación de negocios."
+    "cta_title": "¿Listo para trabajar juntos?",
+    "cta_text": "Contáctame para discutir cómo puedo aportar valor a tu equipo.",
+    "copyright_mobile": "© 2024 Portafolio - Matias Garnica",
+    "copyright_desktop": "© 2024 Matias Garnica - Programador Full Stack",
+    "description_desktop": "Programador Universitario Full Stack, Facultad Regional Tucumán."
   },
   "data": {
     "services": [
-        { "title": "Desarrollo SaaS", "description": "Desarrollo integral de aplicaciones web por suscripción con seguridad multi-inquilino robusta.", "icon": "cloud" },
-        { "title": "Paneles Personalizados", "description": "Herramientas de visualización de datos de alto rendimiento que transforman datos complejos.", "icon": "dashboard" },
-        { "title": "Sistemas Empresariales", "description": "Sistemas internos complejos para gestión de cadena de suministro y ERP.", "icon": "hub" }
+        { "title": "Citrus-Track (2025)", "description": "Líder de Equipo / Full Stack. App web/móvil para trazabilidad citrícola. (React, Node, MySQL, WebSocket).", "icon": "eco" },
+        { "title": "Gestión Académica (2025)", "description": "Desarrollador Full Stack. Sistema para gestión de alumnos y detección de patrones de desempeño. (React, Node, MySQL).", "icon": "school" },
+        { "title": "Freelance", "description": "Desarrollo de soluciones web a medida y soporte técnico.", "icon": "code" }
     ],
     "projects_mobile": [
         { 
-            "id": "inventory-os-pro",
-            "title": "InventoryOS Pro", 
-            "category": "Producto SaaS", 
-            "description": "Sistema de gestión de inventarios en tiempo real para almacenes distribuidos con reabastecimiento predictivo.",
-            "challenge": "Los sistemas tradicionales de inventario sufrían de latencia en la sincronización entre depósitos, provocando roturas de stock y sobreventa.",
-            "solution": "Implementé una arquitectura basada en eventos con WebSockets para sincronización en tiempo real y un algoritmo predictivo que alerta sobre reabastecimiento.",
+            "id": "citrus-track",
+            "title": "Citrus-Track", 
+            "category": "Líder de Equipo / Full Stack", 
+            "description": "App para industria citrícola. Trazabilidad y logística desde finca a exportación.",
+            "challenge": "Falta de seguimiento en tiempo real de la producción y logística citrícola.",
+            "solution": "Plataforma web y móvil con WebSockets y MySQL para trazabilidad completa.",
             "repo_link": "https://github.com/vmg22",
             "demo_link": "#",
             "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCy3BfQwefXosCFaBFHQBDX5_IAY_bKL_ktF4ARzwkJTevL-fUvq-MZB7ljYqQJqhx9lke61getMVyxKZH5L_9-EYdI-aQWonUGXrwZw-i920PeCmrz88m9E9wZpp8yeHQYWTfVFBdnDMArpVSbHZVpVm0QAXaHaAv3SY_AmrQ2rBXTwvB3ZD_lQOQwbHRMZuNNp7AfLb-M68RmDkhH9MK0FPMIY3-P74igHhIg51wP-FeKEucV8XztirVcFjIAjuBRLJWwu-1Q0oY",
-            "tags": ["Next.js", "Prisma"]
+            "tags": ["React.js", "Node.js", "MySQL"]
         },
         { 
-            "id": "nexus-crm",
-            "title": "Nexus CRM", 
-            "category": "Herramienta Interna", 
-            "description": "Suite de gestión de relaciones personalizada diseñada específicamente para equipos de logística universitaria.",
-            "challenge": "El cliente usaba hojas de cálculo desconectadas, perdiendo el 30% de los leads por falta de seguimiento.",
-            "solution": "Desarrollé un CRM centralizado con automatización de tareas y recordatorios, aumentando la conversión de leads en un 45%.",
+            "id": "gestion-academica",
+            "title": "Gestión Académica", 
+            "category": "Desarrollador Web Full Stack", 
+            "description": "Sistema para gestión académica del Colegio Guido Spano.",
+            "challenge": "Necesidad de herramientas para detección temprana de patrones de desempeño estudiantil.",
+            "solution": "App web para seguimiento de alumnos y docentes con reportes detallados.",
             "repo_link": "https://github.com/vmg22",
             "demo_link": "#",
             "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCnYPatPtTpuKGlWa5x-dqdyBO12CTc_mx9Dat689Rnr_SYQuzTQQGADf8xZhAm83ywW1xpXnlqAIXwOiglcRE-eOxeLwcNVliX1BGQQAI8rM4W6TTKBsUjpNCMME7mFhd-Lu7MNxJPMRQBleQj-WqDwTD5H3hFtIN7qE1IqNVolUAqukrjQpx0Ajm55DNfqGg9sGM0WXsms3VBFqOhq4F_0iwWqcIfg1TR7alYdCti_h9xtMGH_YA7XyLd704kzVDxNYljFwwGKBs",
-            "tags": ["TypeScript", "Redux"]
+            "tags": ["React.js", "Node.js", "MySQL"]
         }
     ],
     "projects_desktop": [
         { 
-            "id": "eventshare",
-            "title": "EventShare", 
-            "category": "SaaS Full-Stack", 
-            "description": "Plataforma integral para organización de eventos corporativos, con colaboración en tiempo real y ticketing automatizado.",
-            "challenge": "Organizar eventos corporativos requería múltiples herramientas (email, Excel, tickets) sin integración.",
-            "solution": "Plataforma 'todo en uno' con gestión de invitados en tiempo real, generación de QR para tickets y panel de analíticas.",
+            "id": "citrus-track",
+            "title": "Citrus-Track", 
+            "category": "Proyecto FAPPE UTN", 
+            "description": "Aplicación integral para la trazabilidad y logística de la industria citrícola.",
+            "challenge": "Gestionar la trazabilidad completa del producto desde la finca hasta la exportación en tiempo real.",
+            "solution": "Desarrollo Full Stack (React, Node, MySQL) con WebSockets para seguimiento en vivo y Nodemailer para notificaciones.",
             "repo_link": "https://github.com/vmg22",
             "demo_link": "#",
-            "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCb1JKCVF0dVo3CKCrEWGkmJrP7cqZe84IPy74Lc6JfikJncmHFzwLO5rFyVj3ooDbe_8-UdWfEp9OW7vtdGK3JFZ1qLYrpVjWXvdd6BwjlTwkq0xYzDw6DwzVxGnFcGiEXnQpq4vZ44n8yHJaW7UE4gzp_CBXYzAxBAfeFSuE8VpXK3dk2hCWJoxCE959y_zcHY-8_Kx-nF7bP4wABQV96dctyQ4akUurmLAqfoPWiddMw6q0w92Q91dQ5bXtV9E2NjPiBQt0fZU8",
-            "tags": []
+            "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCy3BfQwefXosCFaBFHQBDX5_IAY_bKL_ktF4ARzwkJTevL-fUvq-MZB7ljYqQJqhx9lke61getMVyxKZH5L_9-EYdI-aQWonUGXrwZw-i920PeCmrz88m9E9wZpp8yeHQYWTfVFBdnDMArpVSbHZVpVm0QAXaHaAv3SY_AmrQ2rBXTwvB3ZD_lQOQwbHRMZuNNp7AfLb-M68RmDkhH9MK0FPMIY3-P74igHhIg51wP-FeKEucV8XztirVcFjIAjuBRLJWwu-1Q0oY",
+            "tags": ["React.js", "Node.js", "MySQL", "WebSockets"]
         },
         { 
-            "id": "gestion-escolar",
-            "title": "Gestión Escolar", 
-            "category": "Sistema de Gestión", 
-            "description": "Arquitectura de datos compleja para el seguimiento del progreso estudiantil.",
-            "challenge": "Dificultad para trazar el progreso académico histórico de los alumnos debido a datos fragmentados.",
-            "solution": "Sistema centralizado con visualización de datos históricos y generación automática de reportes de rendimiento.",
+            "id": "gestion-academica",
+            "title": "Gestión Académica", 
+            "category": "Colegio Guido Spano", 
+            "description": "Plataforma para el acompañamiento y gestión del desempeño académico.",
+            "challenge": "Implementar herramientas digitales para detectar patrones de desempeño en alumnos y docentes.",
+            "solution": "Aplicación web centralizada (React, Node, MySQL) que digitaliza la gestión operativa y académica.",
             "repo_link": "https://github.com/vmg22",
             "demo_link": "#",
-            "image": "", 
-            "tags": []
-        },
-        { 
-            "id": "agro-trazabilidad",
-            "title": "Agro-Trazabilidad", 
-            "category": "Tecnología Industrial", 
-            "description": "Seguimiento de cadena de suministro inspirado en blockchain.",
-            "challenge": "Falta de transparencia en la cadena de suministro agrícola, dificultando la certificación de origen.",
-            "solution": "Sistema de trazabilidad inmutable que registra cada etapa del proceso productivo, garantizando la autenticidad.",
-            "repo_link": "https://github.com/vmg22",
-            "demo_link": "#",
-            "image": "", 
-            "tags": ["Node.js", "PostgreSQL"]
+            "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCnYPatPtTpuKGlWa5x-dqdyBO12CTc_mx9Dat689Rnr_SYQuzTQQGADf8xZhAm83ywW1xpXnlqAIXwOiglcRE-eOxeLwcNVliX1BGQQAI8rM4W6TTKBsUjpNCMME7mFhd-Lu7MNxJPMRQBleQj-WqDwTD5H3hFtIN7qE1IqNVolUAqukrjQpx0Ajm55DNfqGg9sGM0WXsms3VBFqOhq4F_0iwWqcIfg1TR7alYdCti_h9xtMGH_YA7XyLd704kzVDxNYljFwwGKBs",
+            "tags": ["React.js", "Node.js", "MySQL"]
         }
     ],
     "experience": [
-        { "year": "2021 — Presente", "role": "Ingeniería de Software", "context": "Ciencias de la Computación" },
-        { "year": "Verano 2023", "role": "Desarrollador Web Junior", "context": "Freelance y Pasantías" }
+        { "year": "2024 — 2025", "role": "Programador Universitario Full Stack", "context": "Universidad Nacional de Tucumán" },
+        { "year": "2025", "role": "Certificación Backend Node.js", "context": "Desafío Latam" },
+        { "year": "2025", "role": "Certificación React", "context": "Coding Chickens / Desafío Latam" }
     ]
   }
 }
