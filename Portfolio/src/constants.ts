@@ -21,6 +21,14 @@ export interface Experience {
     type: 'academic' | 'professional';
 }
 
+export const SOCIAL_LINKS = {
+    github: "https://github.com/vmg22", // Defaulted to user's known username from git remote if possible, or placeholder
+    linkedin: "https://www.linkedin.com/in/matias-garnica22",
+    instagram: "https://www.instagram.com/developer.tuc/",
+    email: "mailto:devtuc25@gmail.com",
+    secondary_email: "mailto:Victor.GarnicaCampero@alu.frt.utn.edu.ar"
+};
+
 export const TECH_STACK = [
     "React.js",
     "Next.js",

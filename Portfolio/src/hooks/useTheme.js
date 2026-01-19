@@ -1,27 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useThemeStore } from '../store/useThemeStore';
 
 export function useTheme() {
-  const [theme, setTheme] = useState(() => {
-    // Check localStorage or system preference
-    if (typeof window !== 'undefined') {
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) return savedTheme;
-      
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    return 'dark'; // Default fallback
-  });
+  const { theme, toggleTheme } = useThemeStore();
 
   useEffect(() => {
-    // Update the DOM attribute
+    // Update the DOM attribute whenever the theme changes
     document.documentElement.setAttribute('data-theme', theme);
-    // Persist to localStorage
-    localStorage.setItem('theme', theme);
+    
+    // Also toggle the class for generic Tailwind dark mode if configured
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
-  };
 
   return { theme, toggleTheme };
 }

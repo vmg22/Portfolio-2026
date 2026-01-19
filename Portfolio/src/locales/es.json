@@ -5,6 +5,26 @@
     "stack": "Tecnologías",
     "contact": "Contactar"
   },
+  "contact": {
+    "title": "Hablemos",
+    "subtitle": "¿Tienes un proyecto en mente o quieres discutir sobre tecnología? Envíame un mensaje.",
+    "email_label": "Tu Email",
+    "name_label": "Tu Nombre",
+    "phone_label": "Tu Celular",
+    "subject_label": "Asunto",
+    "message_label": "Mensaje",
+    "send_btn": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "success": "¡Mensaje enviado con éxito!",
+    "error": "Hubo un error al enviar el mensaje. Por favor intenta de nuevo.",
+    "placeholders": {
+        "name": "Ej: Juan Pérez",
+        "email": "Ej: juan@email.com",
+        "phone": "Ej: +54 9 ...",
+        "subject": "Ej: Consulta por proyecto",
+        "message": "Escribe tu mensaje aquí..."
+    }
+  },
   "hero": {
     "status": "Disponible para Proyectos",
     "title_mobile_prefix": "Transformando",
@@ -50,39 +70,64 @@
     ],
     "projects_mobile": [
         { 
+            "id": "inventory-os-pro",
             "title": "InventoryOS Pro", 
             "category": "Producto SaaS", 
             "description": "Sistema de gestión de inventarios en tiempo real para almacenes distribuidos con reabastecimiento predictivo.",
+            "challenge": "Los sistemas tradicionales de inventario sufrían de latencia en la sincronización entre depósitos, provocando roturas de stock y sobreventa.",
+            "solution": "Implementé una arquitectura basada en eventos con WebSockets para sincronización en tiempo real y un algoritmo predictivo que alerta sobre reabastecimiento.",
+            "repo_link": "https://github.com/vmg22",
+            "demo_link": "#",
             "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCy3BfQwefXosCFaBFHQBDX5_IAY_bKL_ktF4ARzwkJTevL-fUvq-MZB7ljYqQJqhx9lke61getMVyxKZH5L_9-EYdI-aQWonUGXrwZw-i920PeCmrz88m9E9wZpp8yeHQYWTfVFBdnDMArpVSbHZVpVm0QAXaHaAv3SY_AmrQ2rBXTwvB3ZD_lQOQwbHRMZuNNp7AfLb-M68RmDkhH9MK0FPMIY3-P74igHhIg51wP-FeKEucV8XztirVcFjIAjuBRLJWwu-1Q0oY",
             "tags": ["Next.js", "Prisma"]
         },
         { 
+            "id": "nexus-crm",
             "title": "Nexus CRM", 
             "category": "Herramienta Interna", 
             "description": "Suite de gestión de relaciones personalizada diseñada específicamente para equipos de logística universitaria.",
+            "challenge": "El cliente usaba hojas de cálculo desconectadas, perdiendo el 30% de los leads por falta de seguimiento.",
+            "solution": "Desarrollé un CRM centralizado con automatización de tareas y recordatorios, aumentando la conversión de leads en un 45%.",
+            "repo_link": "https://github.com/vmg22",
+            "demo_link": "#",
             "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCnYPatPtTpuKGlWa5x-dqdyBO12CTc_mx9Dat689Rnr_SYQuzTQQGADf8xZhAm83ywW1xpXnlqAIXwOiglcRE-eOxeLwcNVliX1BGQQAI8rM4W6TTKBsUjpNCMME7mFhd-Lu7MNxJPMRQBleQj-WqDwTD5H3hFtIN7qE1IqNVolUAqukrjQpx0Ajm55DNfqGg9sGM0WXsms3VBFqOhq4F_0iwWqcIfg1TR7alYdCti_h9xtMGH_YA7XyLd704kzVDxNYljFwwGKBs",
             "tags": ["TypeScript", "Redux"]
         }
     ],
     "projects_desktop": [
         { 
+            "id": "eventshare",
             "title": "EventShare", 
             "category": "SaaS Full-Stack", 
             "description": "Plataforma integral para organización de eventos corporativos, con colaboración en tiempo real y ticketing automatizado.",
+            "challenge": "Organizar eventos corporativos requería múltiples herramientas (email, Excel, tickets) sin integración.",
+            "solution": "Plataforma 'todo en uno' con gestión de invitados en tiempo real, generación de QR para tickets y panel de analíticas.",
+            "repo_link": "https://github.com/vmg22",
+            "demo_link": "#",
             "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCb1JKCVF0dVo3CKCrEWGkmJrP7cqZe84IPy74Lc6JfikJncmHFzwLO5rFyVj3ooDbe_8-UdWfEp9OW7vtdGK3JFZ1qLYrpVjWXvdd6BwjlTwkq0xYzDw6DwzVxGnFcGiEXnQpq4vZ44n8yHJaW7UE4gzp_CBXYzAxBAfeFSuE8VpXK3dk2hCWJoxCE959y_zcHY-8_Kx-nF7bP4wABQV96dctyQ4akUurmLAqfoPWiddMw6q0w92Q91dQ5bXtV9E2NjPiBQt0fZU8",
             "tags": []
         },
         { 
+            "id": "gestion-escolar",
             "title": "Gestión Escolar", 
             "category": "Sistema de Gestión", 
             "description": "Arquitectura de datos compleja para el seguimiento del progreso estudiantil.",
+            "challenge": "Dificultad para trazar el progreso académico histórico de los alumnos debido a datos fragmentados.",
+            "solution": "Sistema centralizado con visualización de datos históricos y generación automática de reportes de rendimiento.",
+            "repo_link": "https://github.com/vmg22",
+            "demo_link": "#",
             "image": "", 
             "tags": []
         },
         { 
+            "id": "agro-trazabilidad",
             "title": "Agro-Trazabilidad", 
             "category": "Tecnología Industrial", 
             "description": "Seguimiento de cadena de suministro inspirado en blockchain.",
+            "challenge": "Falta de transparencia en la cadena de suministro agrícola, dificultando la certificación de origen.",
+            "solution": "Sistema de trazabilidad inmutable que registra cada etapa del proceso productivo, garantizando la autenticidad.",
+            "repo_link": "https://github.com/vmg22",
+            "demo_link": "#",
             "image": "", 
             "tags": ["Node.js", "PostgreSQL"]
         }
