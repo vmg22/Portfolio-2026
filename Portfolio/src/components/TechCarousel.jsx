@@ -29,7 +29,7 @@ const slugs = [
     "jira",
     "postman",
     "docker",
-    "amazonaws"
+    "amazonwebservices"
 ];
 
 export function TechCarousel() {

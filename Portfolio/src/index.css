@@ -99,11 +99,16 @@
 }
 
 @layer base {
+    html {
+        /* Default behavior */
+    }
     body {
         font-family: 'Space Grotesk', sans-serif;
         background-color: var(--color-bg-dark);
         color: var(--color-text-white);
         -webkit-tap-highlight-color: transparent;
         transition: background-color 0.3s ease, color 0.3s ease; /* Smooth Transition */
+        min-height: 100vh;
+        position: relative;
     }
 }

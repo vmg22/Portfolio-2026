@@ -59,8 +59,8 @@
     "cta_title": "Ready to automate your logic?",
     "cta_text": "Currently accepting new freelance projects and internship opportunities for 2024.",
     "copyright_mobile": "© 2024 Developer Portfolio — Built with Logic",
-    "copyright_desktop": "© 2024 Built with precision.",
-    "description_desktop": "Building software for the next generation of businesses."
+    "copyright_desktop": "© 2024 Matias Garnica - Full Stack Developer",
+    "description_desktop": "University Full Stack Developer, National Technological University - Tucumán Regional Faculty."
   },
   "data": {
     "services": [
@@ -70,71 +70,174 @@
     ],
     "projects_mobile": [
         { 
-            "id": "inventory-os-pro",
-            "title": "InventoryOS Pro", 
-            "category": "SaaS Product", 
-            "description": "Real-time inventory management system for distributed warehouses with predictive restocking.",
-            "challenge": "Traditional inventory systems suffered from latency in synchronization between warehouses, causing stockouts and overselling.",
-            "solution": "Implemented an event-driven architecture with WebSockets for real-time synchronization and a predictive algorithm for restocking alerts.",
+            "id": "photofest",
+            "title": "PhotoFest", 
+            "category": "Social Event App", 
+            "role": "Full Stack Developer",
+            "year": "2024",
+            "team_size": "Personal",
+            "methodology": "Rapid Prototyping",
+            "impact": "Facilitated real-time collection of +500 photos at social events without app installation, democratizing access to digital memories.",
+            "description": "Real-time platform for uploading photos at social events without registration.",
+            "challenge": "Allowing massive concurrent uploads and real-time viewing without a complex backend.",
+            "solution": "Serverless-like architecture using MongoDB as DB and Cloudinary for media.",
+            "modules": ["Instant QR Upload", "Live Gallery (WebSocket)", "Event Management", "Image Optimization"],
+            "stack_details": {
+                "frontend": "React 19, Tailwind, Zustand",
+                "backend": "Node.js (Serverless functions)",
+                "database": "MongoDB",
+                "tools": "Cloudinary, Vercel"
+            },
             "repo_link": "https://github.com/vmg22",
             "demo_link": "#",
-            "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCy3BfQwefXosCFaBFHQBDX5_IAY_bKL_ktF4ARzwkJTevL-fUvq-MZB7ljYqQJqhx9lke61getMVyxKZH5L_9-EYdI-aQWonUGXrwZw-i920PeCmrz88m9E9wZpp8yeHQYWTfVFBdnDMArpVSbHZVpVm0QAXaHaAv3SY_AmrQ2rBXTwvB3ZD_lQOQwbHRMZuNNp7AfLb-M68RmDkhH9MK0FPMIY3-P74igHhIg51wP-FeKEucV8XztirVcFjIAjuBRLJWwu-1Q0oY",
-            "tags": ["Next.js", "Prisma"]
+            "image": "/assets/projects/photofest.png",
+            "tags": ["React", "Node.js", "MongoDB"]
         },
         { 
-            "id": "nexus-crm",
-            "title": "Nexus CRM", 
-            "category": "Internal Tool", 
-            "description": "Custom relationship management suite designed specifically for university logistics teams.",
-            "challenge": "The client used disconnected spreadsheets, losing 30% of leads due to lack of follow-up.",
-            "solution": "Developed a centralized CRM with task automation and reminders, increasing lead conversion by 45%.",
+            "id": "citrus-track",
+            "title": "Citrus-Track", 
+            "category": "Team Lead / Full Stack", 
+            "role": "Technical Lead & Full Stack",
+            "year": "2025",
+            "team_size": "4 Members",
+            "methodology": "SCRUM (Weekly Sprints)",
+            "impact": "Total centralization of citrus logistics, reducing dispatch times by 40% and eliminating manual stock errors through digital traceability.",
+            "description": "Comprehensive management system for the citrus industry that centralizes logistics and processing. Solves the lack of visibility in the supply chain by connecting reception, packing, and dispatch.",
+            "challenge": "The industry faced logistic invisibility (transport-cargo disconnection), manual stock management with human errors, lack of unified traceability, and communication delays between plant and drivers.",
+            "solution": "Adapted MERN platform (React, Node, Express, MySQL) with WebSockets for live monitoring. Includes modules for digital reception, pallet traceability with QR, logistics with Google Maps, and KPI dashboard.",
+            "modules": ["Digital Reception", "QR Traceability", "Logistics (Google Maps)", "KPI Dashboard", "Live Alerts"],
+            "stack_details": {
+                "frontend": "React, Tailwind, Framer Motion",
+                "backend": "Node.js, Express, Socket.io",
+                "database": "MySQL",
+                "tools": "GitHub, Figma"
+            },
             "repo_link": "https://github.com/vmg22",
             "demo_link": "#",
-            "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCnYPatPtTpuKGlWa5x-dqdyBO12CTc_mx9Dat689Rnr_SYQuzTQQGADf8xZhAm83ywW1xpXnlqAIXwOiglcRE-eOxeLwcNVliX1BGQQAI8rM4W3TTKBsUjpNCMME7mFhd-Lu7MNxJPMRQBleQj-WqDwTD5H3hFtIN7qE1IqNVolUAqukrjQpx0Ajm55DNfqGg9sGM0WXsms3VBFqOhq4F_0iwWqcIfg1TR7alYdCti_h9xtMGH_YA7XyLd704kzVDxNYljFwwGKBs",
-            "tags": ["TypeScript", "Redux"]
+            "image": "/assets/projects/citrus-track.jpg",
+            "tags": ["React", "Node.js", "MySQL", "WebSockets", "Google Maps API"]
+        },
+        { 
+            "id": "gestion-academica",
+            "title": "Academic Management", 
+            "category": "Full Stack Web Developer", 
+            "role": "Full Stack Developer",
+            "year": "2025",
+            "team_size": "4 Members",
+            "methodology": "SCRUM",
+            "impact": "100% digitalization of the institute's academic processes, enabling early detection of low performance and improving communication with guardians.",
+            "description": "Comprehensive management system for the Carlos Guido Spano Institute. Digitalizes student, course, and attendance administration, replacing manual paper processes and centralizing academic and disciplinary information.",
+            "challenge": "Manual management (paper) prone to errors and loss, difficulty accessing histories, lack of automatic reports, and limited/inefficient communication with guardians.",
+            "solution": "Modular web platform with roles (Admin, Teacher, Preceptor) developed in React and Node.js. Includes real-time attendance management, grade recording, automatic certificate/report generation, and digital notifications to guardians.",
+            "modules": ["Attendance Management", "Grade Recording", "Academic Reports", "Guardian Portal", "Certificate Generation"],
+            "stack_details": {
+                "frontend": "React, Bootstrap",
+                "backend": "Node.js, Express, JWT",
+                "database": "MySQL",
+                "tools": "Git, Trello"
+            },
+            "repo_link": "https://github.com/vmg22",
+            "demo_link": "#",
+            "image": "/assets/projects/gestion-academica.png",
+            "tags": ["React", "Node.js", "MySQL", "Express", "SCRUM"]
         }
     ],
     "projects_desktop": [
         { 
-            "id": "eventshare",
-            "title": "EventShare", 
-            "category": "Full-Stack SaaS", 
-            "description": "Comprehensive platform for corporate event organization, featuring real-time collaboration and automated ticketing.",
-            "challenge": "Organizing corporate events required multiple tools (email, Excel, tickets) without integration.",
-            "solution": "All-in-one platform with real-time guest management, QR code generation for tickets, and analytics dashboard.",
+            "id": "photofest",
+            "title": "PhotoFest", 
+            "category": "Event Platform", 
+            "role": "Full Stack Developer",
+            "year": "2024",
+            "team_size": "Personal",
+            "methodology": "Rapid Prototyping",
+            "impact": "Facilitated real-time collection of +500 photos at social events without app installation, democratizing access to digital memories.",
+            "description": "Collaborative real-time photo gallery for weddings and parties. Guests upload photos via QR without installing apps.",
+            "challenge": "Create a low-cost but high-performance system to handle hundreds of concurrent uploads during events.",
+            "solution": "Lightweight backend with Node.js orchestrating Cloudinary (Image CDN) and using MongoDB as an effective NoSQL database.",
+            "modules": ["Instant QR Upload", "Live Gallery (WebSocket)", "Event Management", "Image Optimization"],
+            "stack_details": {
+                "frontend": "React 19, Tailwind, Zustand",
+                "backend": "Node.js (Serverless functions)",
+                "database": "MongoDB",
+                "tools": "Cloudinary, Vercel"
+            },
             "repo_link": "https://github.com/vmg22",
             "demo_link": "#",
-            "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCb1JKCVF0dVo3CKCrEWGkmJrP7cqZe84IPy74Lc6JfikJncmHFzwLO5rFyVj3ooDbe_8-UdWfEp9OW7vtdGK3JFZ1qLYrpVjWXvdd6BwjlTwkq0xYzDw6DwzVxGnFcGiEXnQpq4vZ44n8yHJaW7UE4gzp_CBXYzAxBAfeFSuE8VpXK3dk2hCWJoxCE959y_zcHY-8_Kx-nF7bP4wABQV96dctyQ4akUurmLAqfoPWiddMw6q0w92Q91dQ5bXtV9E2NjPiBQt0fZU8",
-            "tags": []
+            "image": "/assets/projects/photofest.png",
+            "tags": ["React 19", "MongoDB", "Cloudinary", "Zustand"]
         },
         { 
-            "id": "gestion-escolar",
-            "title": "School Management", 
-            "category": "Management System", 
-            "description": "Complex data architecture for tracking student progress.",
-            "challenge": "Difficulty in tracking historical academic progress of students due to fragmented data.",
-            "solution": "Centralized system with historical data visualization and automatic performance report generation.",
+            "id": "citrus-track",
+            "title": "Citrus-Track", 
+            "category": "FAPPE UTN Project", 
+            "role": "Technical Lead & Full Stack",
+            "year": "2025",
+            "team_size": "4 Members",
+            "methodology": "SCRUM (Weekly Sprints)",
+            "impact": "Total centralization of citrus logistics, reducing dispatch times by 40% and eliminating manual stock errors through digital traceability.",
+            "description": "Comprehensive management system for the citrus industry that centralizes logistics and processing. Solves the lack of visibility in the supply chain by connecting reception, packing, and dispatch.",
+            "challenge": "The industry faced logistic invisibility (transport-cargo disconnection), manual stock management with human errors, lack of unified traceability, and communication delays between plant and drivers.",
+            "solution": "Adapted MERN platform (React, Node, Express, MySQL) with WebSockets for live monitoring. Includes modules for digital reception, pallet traceability with QR, logistics with Google Maps, and KPI dashboard.",
+            "modules": ["Digital Reception", "QR Traceability", "Logistics (Google Maps)", "KPI Dashboard", "Live Alerts"],
+            "stack_details": {
+                "frontend": "React, Tailwind, Framer Motion",
+                "backend": "Node.js, Express, Socket.io",
+                "database": "MySQL",
+                "tools": "GitHub, Figma"
+            },
             "repo_link": "https://github.com/vmg22",
             "demo_link": "#",
-            "image": "", 
-            "tags": []
+            "image": "/assets/projects/citrus-track.jpg",
+            "tags": ["React", "Node.js", "MySQL", "WebSockets", "Google Maps API"]
         },
         { 
-            "id": "agro-trazabilidad",
-            "title": "Agro-Traceability", 
-            "category": "Industrial Tech", 
-            "description": "Supply chain tracking inspired by blockchain.",
-            "challenge": "Lack of transparency in the agricultural supply chain, making origin certification difficult.",
-            "solution": "Immutable traceability system recording every stage of the production process, ensuring authenticity.",
+            "id": "gestion-academica",
+            "title": "Academic Management", 
+            "category": "Guido Spano College", 
+            "role": "Full Stack Developer",
+            "year": "2025",
+            "team_size": "4 Members",
+            "methodology": "SCRUM",
+            "impact": "100% digitalization of the institute's academic processes, enabling early detection of low performance and improving communication with guardians.",
+            "description": "Comprehensive management system for the Carlos Guido Spano Institute. Digitalizes student, course, and attendance administration, replacing manual paper processes and centralizing academic and disciplinary information.",
+            "challenge": "Manual management (paper) prone to errors and loss, difficulty accessing histories, lack of automatic reports, and limited/inefficient communication with guardians.",
+            "solution": "Modular web platform with roles (Admin, Teacher, Preceptor) developed in React and Node.js. Includes real-time attendance management, grade recording, automatic certificate/report generation, and digital notifications to guardians.",
+            "modules": ["Attendance Management", "Grade Recording", "Academic Reports", "Guardian Portal", "Certificate Generation"],
+            "stack_details": {
+                "frontend": "React, Bootstrap",
+                "backend": "Node.js, Express, JWT",
+                "database": "MySQL",
+                "tools": "Git, Trello"
+            },
             "repo_link": "https://github.com/vmg22",
             "demo_link": "#",
-            "image": "", 
-            "tags": ["Node.js", "PostgreSQL"]
+            "image": "/assets/projects/gestion-academica.png",
+            "tags": ["React", "Node.js", "MySQL", "Express", "SCRUM"]
         }
     ],
     "experience": [
         { "year": "2021 — Present", "role": "Software Engineering", "context": "Computer Science" },
         { "year": "Summer 2023", "role": "Junior Web Developer", "context": "Freelance & Internships" }
     ]
+  },
+  "project_detail": {
+    "why_custom": {
+      "title": "Why Choose Custom Software?",
+      "scalability_title": "Scalability First",
+      "scalability_desc": "Built to grow with your business, not limit it. No license fees per user.",
+      "ownership_title": "Total Ownership",
+      "ownership_desc": "You own the code and the data. No vendor lock-in or hidden costs.",
+      "integration_title": "Perfect Integration",
+      "integration_desc": "Connects seamlessly with your existing tools and workflows.",
+      "quote_part1": "The difference between good software and great software is how well it solves",
+      "quote_part2": "your specific problem",
+      "quote_part3": "."
+    },
+    "cta": {
+      "title": "Ready to scale your business?",
+      "description": "This project was built to solve specific business problems. I can build a custom solution tailored exactly to your needs.",
+      "button": "Start Your Project"
+    }
   }
 }
