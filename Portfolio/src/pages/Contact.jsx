@@ -16,7 +16,13 @@ export function Contact() {
     setStatus('sending');
     
     try {
-      const response = await fetch('http://localhost:3000/api/contact', {
+      // Use relative path for production (Vercel) and absolute for local dev if server is running separately
+      // However, simplified approach: Vercel sees /api/contact. Local server is at localhost:3000/api/contact.
+      const API_URL = import.meta.env.PROD 
+        ? '/api/contact' 
+        : 'http://localhost:3000/api/contact';
+
+      const response = await fetch(API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
