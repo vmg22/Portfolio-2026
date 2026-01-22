@@ -239,5 +239,10 @@
       "description": "This project was built to solve specific business problems. I can build a custom solution tailored exactly to your needs.",
       "button": "Start Your Project"
     }
+  },
+  "404": {
+    "title": "Page Not Found",
+    "description": "Sorry, the page you are looking for does not exist or has been moved.",
+    "button": "Back to Home"
   }
 }

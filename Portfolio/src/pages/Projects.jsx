@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { FadeIn } from '../components/FadeIn';
 
+import { SEO } from '../components/SEO';
+
 export function Projects() {
   const { t } = useTranslation();
   
@@ -13,6 +15,10 @@ export function Projects() {
 
   return (
     <>
+      <SEO 
+        title={t('sections.projects_title')} 
+        description="Explora mis proyectos y casos de estudio como desarrollador Full Stack."
+      />
         {/* MOBILE PROJECTS (Vertical List) */}
         <section className="md:hidden px-6 py-8 space-y-6 max-w-md mx-auto pt-20">
           <FadeIn>

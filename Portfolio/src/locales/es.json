@@ -240,5 +240,10 @@
       "description": "Este proyecto fue construido para resolver problemas de negocio específicos. Puedo crear una solución personalizada adaptada exactamente a tus necesidades.",
       "button": "Comenzar Proyecto"
     }
+  },
+  "404": {
+    "title": "Página No Encontrada",
+    "description": "Lo sentimos, la página que buscas no existe o ha sido movida.",
+    "button": "Volver al Inicio"
   }
 }

@@ -4,6 +4,8 @@ import { TECH_STACK } from '../constants';
 import { FadeIn, StaggerContainer, StaggerItem } from '../components/FadeIn';
 import { TechCarousel } from '../components/TechCarousel';
 
+import { SEO } from '../components/SEO';
+
 export function Home() {
     const { t } = useTranslation();
 
@@ -12,6 +14,10 @@ export function Home() {
   
     return (
         <>
+        <SEO 
+            title={t('hero.title_mobile_prefix') + " " + t('hero.title_mobile_highlight')} 
+            description={t('hero.subtitle_desktop')}
+        />
         {/* MOBILE HERO */}
         <section className="md:hidden pt-24 px-6 pb-12 flex flex-col items-center text-center max-w-md mx-auto">
           <FadeIn>

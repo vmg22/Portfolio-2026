@@ -131,6 +131,7 @@ export function ProjectDetail() {
   if (!project) {
     return (
         <div className="min-h-screen flex items-center justify-center text-off-white bg-background-dark">
+            <SEO title="Project Not Found" />
             <div className="text-center">
                 <h2 className="text-2xl font-bold mb-4">Project Not Found</h2>
                 <Link to="/projects" className="text-primary hover:text-accent-light">Back to Projects</Link>
@@ -141,6 +142,11 @@ export function ProjectDetail() {
 
   return (
     <article className="min-h-screen bg-background-dark">
+      <SEO 
+        title={project.title} 
+        description={project.description} 
+        image={project.image}
+      />
       {/* 1. Immersive Hero Section */}
       <section className="relative h-[85vh] min-h-[600px] w-full flex flex-col justify-end pb-20">
         {project.image ? (

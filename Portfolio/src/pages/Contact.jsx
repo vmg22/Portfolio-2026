@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 import { FadeIn } from '../components/FadeIn';
 import { SOCIAL_LINKS } from '../constants';
 
+import { SEO } from '../components/SEO';
+
 export function Contact() {
   const { t } = useTranslation();
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -36,6 +38,10 @@ export function Contact() {
 
   return (
     <section className="min-h-screen pt-32 pb-20 px-6">
+      <SEO 
+          title={t('contact.title')} 
+          description="Contáctame para iniciar tu próximo proyecto de software."
+      />
       <div className="max-w-4xl mx-auto">
         <FadeIn>
           <div className="text-center mb-16">
