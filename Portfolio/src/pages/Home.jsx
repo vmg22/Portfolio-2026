@@ -41,9 +41,9 @@ export function Home() {
               <span>{t('hero.cta_primary_mobile')}</span>
               <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </Link>
-            <button className="w-full bg-accent-deep/50 text-off-white font-bold py-4 rounded-xl border border-accent-light/20">
+            <a href="/assets/cv.pdf" download="Matias_Garnica_CV.pdf" className="w-full bg-accent-deep/50 text-off-white font-bold py-4 rounded-xl border border-accent-light/20 flex items-center justify-center">
               {t('hero.cta_secondary_mobile')}
-            </button>
+            </a>
           </FadeIn>
         </section>
 
@@ -81,9 +81,9 @@ export function Home() {
                         <Link to="/projects" className="bg-primary text-off-white px-8 py-4 rounded-xl font-bold text-lg hover:translate-y-[-2px] transition-transform shadow-xl shadow-primary/25">
                         {t('hero.cta_primary_desktop')}
                         </Link>
-                        <button className="bg-accent-deep/50 text-off-white border border-primary/30 px-8 py-4 rounded-xl font-bold text-lg hover:bg-accent-deep transition-colors">
+                        <a href="/assets/cv.pdf" download="Matias_Garnica_CV.pdf" className="bg-accent-deep/50 text-off-white border border-primary/30 px-8 py-4 rounded-xl font-bold text-lg hover:bg-accent-deep transition-colors">
                         {t('hero.cta_secondary_desktop')}
-                        </button>
+                        </a>
                     </div>
                     </StaggerItem>
                 </StaggerContainer>
