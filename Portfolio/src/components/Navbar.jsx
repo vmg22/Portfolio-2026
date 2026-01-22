@@ -24,8 +24,8 @@ export function Navbar() {
               <span className="material-symbols-outlined text-off-white text-xl">terminal</span>
             </div>
             {/* Text */}
-            <span className="text-xl md:text-xl font-bold tracking-tight text-off-white hidden md:block group-hover:text-primary transition-colors">DevPortfolio</span>
-            <span className="text-lg font-bold tracking-tight text-off-white md:hidden">PortafolioDev</span>
+            <span className="text-xl md:text-xl font-bold tracking-tight text-off-white hidden md:block group-hover:text-primary transition-colors">Matias Garnica</span>
+            <span className="text-lg font-bold tracking-tight text-off-white md:hidden">Matias G.</span>
           </Link>
 
           {/* Desktop Links */}

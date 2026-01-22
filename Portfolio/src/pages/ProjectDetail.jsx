@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo } from 'react';
+import { SEO } from '../components/SEO';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { FadeIn, StaggerContainer, StaggerItem } from '../components/FadeIn';
