@@ -87,11 +87,17 @@ export function ProjectDetail() {
   // Fetch icons
   useEffect(() => {
     if (neededSlugs.length > 0) {
-        fetchSimpleIcons({ slugs: neededSlugs }).then(({ simpleIcons }) => {
-            setIcons(prev => ({ ...prev, ...simpleIcons }));
-        });
+        // Only fetch icons that we don't have yet
+        const missingSlugs = neededSlugs.filter(slug => !icons[slug]);
+        
+        if (missingSlugs.length > 0) {
+            fetchSimpleIcons({ slugs: missingSlugs }).then(({ simpleIcons }) => {
+                setIcons(prev => ({ ...prev, ...simpleIcons }));
+            });
+        }
     }
-  }, [neededSlugs]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [neededSlugs.join(',')]);
 
   const renderTechWithIcon = (techString) => {
       const items = techString.split(',');
