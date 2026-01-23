@@ -20,8 +20,9 @@ i18n
       escapeValue: false // React already escapes values
     },
     detection: {
-      order: ['localStorage', 'navigator'],
-      caches: ['localStorage'] // Persist language choice
+      order: ['queryString', 'cookie', 'localStorage', 'navigator', 'htmlTag'],
+      caches: ['localStorage', 'cookie'],
+      lookupQueryString: 'lang',
     }
   });
 
