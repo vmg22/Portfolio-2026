@@ -42,19 +42,21 @@ const getSlugCallback = (techName) => {
 
 export function ProjectDetail() {
   const { id } = useParams();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
 
-  // Combine projects from both lists to find the matching one
-  const mobileProjects = t('data.projects_mobile', { returnObjects: true });
-  const desktopProjects = t('data.projects_desktop', { returnObjects: true });
-  
-  const allProjects = [
-    ...(Array.isArray(mobileProjects) ? mobileProjects : []),
-    ...(Array.isArray(desktopProjects) ? desktopProjects : [])
-  ];
+  // Memoize projects list to prevent referential instability causing infinite loops
+  const allProjects = useMemo(() => {
+    const mobileProjects = t('data.projects_mobile', { returnObjects: true });
+    const desktopProjects = t('data.projects_desktop', { returnObjects: true });
+    
+    return [
+        ...(Array.isArray(mobileProjects) ? mobileProjects : []),
+        ...(Array.isArray(desktopProjects) ? desktopProjects : [])
+    ];
+  }, [t, i18n.language]);
 
-  const project = allProjects.find(p => p.id === id);
+  const project = useMemo(() => allProjects.find(p => p.id === id), [allProjects, id]);
 
   const [icons, setIcons] = useState({});
 
