@@ -5,7 +5,8 @@ import { Projects } from './pages/Projects';
 
 import { Contact } from './pages/Contact';
 import { ProjectDetail } from './pages/ProjectDetail';
-import { NotFound } from './pages/NotFound'; // Import NotFound
+import { Admin } from './pages/Admin';
+import { NotFound } from './pages/NotFound';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
           <Route path="projects" element={<Projects />} />
           <Route path="projects/:id" element={<ProjectDetail />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} /> {/* Custom 404 */}
+          <Route path="admin" element={<Admin />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

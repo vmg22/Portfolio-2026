@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { TECH_STACK } from '../constants';
 import { FadeIn, StaggerContainer, StaggerItem } from '../components/FadeIn';
 import { TechCarousel } from '../components/TechCarousel';
@@ -8,9 +9,23 @@ import { SEO } from '../components/SEO';
 
 export function Home() {
     const { t } = useTranslation();
+    const [dbProjects, setDbProjects] = useState([]);
+
+    useEffect(() => {
+        fetch('/api/projects')
+            .then(res => res.json())
+            .then(json => {
+                if (json.success) setDbProjects(json.data);
+            })
+            .catch(err => console.error('Error fetching projects:', err));
+    }, []);
 
     const servicesData = t('data.services', { returnObjects: true });
     const services = Array.isArray(servicesData) ? servicesData : [];
+    
+    const projectsToDisplay = dbProjects.length > 0 
+        ? dbProjects 
+        : t('data.projects_desktop', { returnObjects: true });
   
     return (
         <>
@@ -233,9 +248,9 @@ export function Home() {
           </FadeIn>
 
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {t('data.projects_desktop', { returnObjects: true }).slice(0, 3).map((project, idx) => (
-              <StaggerItem key={project.id} className="group relative overflow-hidden rounded-3xl glass-card h-full flex flex-col">
-                <Link to={`/projects/${project.id}`} className="block h-full w-full">
+            {projectsToDisplay.slice(0, 3).map((project, idx) => (
+              <StaggerItem key={project._id || project.id} className="group relative overflow-hidden rounded-3xl glass-card h-full flex flex-col">
+                <Link to={`/projects/${project._id || project.id}`} className="block h-full w-full">
                   <div className="relative h-64 overflow-hidden">
                     <img 
                       src={project.image} 

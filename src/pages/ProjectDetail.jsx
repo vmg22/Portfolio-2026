@@ -44,6 +44,8 @@ export function ProjectDetail() {
   const { id } = useParams();
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+  const [dbProject, setDbProject] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   // Memoize projects list to prevent referential instability causing infinite loops
   const allProjects = useMemo(() => {
@@ -56,7 +58,24 @@ export function ProjectDetail() {
     ];
   }, [t, i18n.language]);
 
-  const project = useMemo(() => allProjects.find(p => p.id === id), [allProjects, id]);
+  useEffect(() => {
+    setLoading(true);
+    fetch('/api/projects')
+      .then(res => res.json())
+      .then(json => {
+        if (json.success) {
+          const found = json.data.find(p => p._id === id || p.id === id);
+          if (found) setDbProject(found);
+        }
+      })
+      .catch(err => console.error('Error fetching project:', err))
+      .finally(() => setLoading(false));
+  }, [id]);
+
+  const project = useMemo(() => {
+    if (dbProject) return dbProject;
+    return allProjects.find(p => p.id === id);
+  }, [dbProject, allProjects, id]);
 
   const [icons, setIcons] = useState({});
 

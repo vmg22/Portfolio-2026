@@ -1,17 +1,28 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useState, useEffect } from 'react';
 import { FadeIn } from '../components/FadeIn';
 
 import { SEO } from '../components/SEO';
 
 export function Projects() {
   const { t } = useTranslation();
+  const [dbProjects, setDbProjects] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/projects')
+      .then(res => res.json())
+      .then(json => {
+        if (json.success) setDbProjects(json.data);
+      })
+      .catch(err => console.error('Error fetching projects:', err));
+  }, []);
   
   const projectsMobileData = t('data.projects_mobile', { returnObjects: true });
-  const projectsMobile = Array.isArray(projectsMobileData) ? projectsMobileData : [];
+  const projectsMobile = dbProjects.length > 0 ? dbProjects : (Array.isArray(projectsMobileData) ? projectsMobileData : []);
 
   const projectsDesktopData = t('data.projects_desktop', { returnObjects: true });
-  const projectsDesktop = Array.isArray(projectsDesktopData) ? projectsDesktopData : [];
+  const projectsDesktop = dbProjects.length > 0 ? dbProjects : (Array.isArray(projectsDesktopData) ? projectsDesktopData : []);
 
   return (
     <>
@@ -29,8 +40,8 @@ export function Projects() {
           </FadeIn>
           
           {projectsMobile.map((project, idx) => (
-            <FadeIn key={idx} delay={idx * 0.1}>
-              <Link to={`/projects/${project.id}`} className="project-card-mobile rounded-xl overflow-hidden flex flex-col group cursor-pointer">
+            <FadeIn key={project._id || project.id} delay={idx * 0.1}>
+              <Link to={`/projects/${project._id || project.id}`} className="project-card-mobile rounded-xl overflow-hidden flex flex-col group cursor-pointer">
                 <div className="relative h-48 bg-background-dark overflow-hidden">
                   <img alt={`Interfaz de ${project.title}`} className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" src={project.image}/>
                   <div className="absolute top-3 left-3 px-2 py-1 rounded bg-accent-light text-[10px] font-bold text-background-dark uppercase tracking-tighter">
@@ -64,7 +75,7 @@ export function Projects() {
               
               {/* Featured Large Project (Index 0) */}
               <FadeIn className="md:col-span-2 row-span-2 group relative overflow-hidden rounded-3xl glass-card">
-                <Link to={`/projects/${projectsDesktop[0].id}`} className="block h-full w-full cursor-pointer">
+                <Link to={`/projects/${projectsDesktop[0]._id || projectsDesktop[0].id}`} className="block h-full w-full cursor-pointer">
                     <div className="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/20 to-transparent z-10"></div>
                     <div className="h-[400px] w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style={{backgroundImage: `url('${projectsDesktop[0].image}')`}}>
                     </div>
@@ -85,8 +96,8 @@ export function Projects() {
               
               {/* Small Projects (Index 1 & 2) */}
               {projectsDesktop.slice(1).map((project, idx) => (
-                <FadeIn key={idx} delay={(idx + 1) * 0.1}>
-                  <Link to={`/projects/${project.id}`} className="group relative overflow-hidden rounded-3xl glass-card h-full block cursor-pointer">
+                <FadeIn key={project._id || project.id} delay={(idx + 1) * 0.1}>
+                  <Link to={`/projects/${project._id || project.id}`} className="group relative overflow-hidden rounded-3xl glass-card h-full block cursor-pointer">
                     <div className="p-8 h-full flex flex-col justify-between">
                       <div>
                         <span className="text-accent-light text-xs font-bold uppercase mb-2 block">{project.category}</span>
