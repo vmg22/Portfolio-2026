@@ -220,7 +220,54 @@ export function Home() {
           </div>
         </section>
 
+        {/* DISPONIBLE DESKTOP/MOBILE: PROYECTOS DESTACADOS */}
+        <section className="py-24 px-6 max-w-7xl mx-auto" id="proyectos">
+          <FadeIn>
+            <div className="flex items-center justify-between mb-12">
+              <h2 className="text-3xl font-bold tracking-tight text-off-white">{t('sections.projects_title')}</h2>
+              <Link to="/projects" className="text-primary hover:text-accent-light font-bold flex items-center gap-2 transition-colors">
+                <span>Ver todos</span>
+                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </Link>
+            </div>
+          </FadeIn>
+
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {t('data.projects_desktop', { returnObjects: true }).slice(0, 3).map((project, idx) => (
+              <StaggerItem key={project.id} className="group relative overflow-hidden rounded-3xl glass-card h-full flex flex-col">
+                <Link to={`/projects/${project.id}`} className="block h-full w-full">
+                  <div className="relative h-64 overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4">
+                      <span className="text-accent-light text-[10px] font-bold uppercase tracking-widest px-2 py-1 bg-background-dark/50 rounded-md backdrop-blur-sm border border-accent-light/10">
+                        {project.category}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-xl font-bold mb-2 text-off-white group-hover:text-primary transition-colors">{project.title}</h3>
+                    <p className="text-off-white/60 text-sm line-clamp-2 mb-4 flex-grow">{project.description}</p>
+                    <div className="flex flex-wrap gap-2 mt-auto">
+                      {project.tags.slice(0, 3).map(tag => (
+                        <span key={tag} className="text-[10px] font-mono text-accent-light bg-accent-light/10 px-2 py-1 rounded">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </Link>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </section>
+
         {/* DESKTOP STACK GRID */}
+
         <section className="hidden md:block py-24" id="stack">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col md:flex-row items-center justify-between gap-12">

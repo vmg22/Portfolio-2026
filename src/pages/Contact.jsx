@@ -64,8 +64,8 @@ export function Contact() {
                         <span className="material-symbols-outlined text-accent-light">mail</span>
                     </div>
                     <h3 className="text-lg font-bold text-off-white mb-2">Email</h3>
-                    <a href={SOCIAL_LINKS.email} className="text-off-white/70 hover:text-accent-light transition-colors break-words block mb-1">devtuc25@gmail.com</a>
-                    <a href={SOCIAL_LINKS.secondary_email} className="text-off-white/70 hover:text-accent-light transition-colors break-words block text-sm">Victor.GarnicaCampero@alu.frt.utn.edu.ar</a>
+                    <a href={SOCIAL_LINKS.email} className="text-off-white/70 hover:text-accent-light transition-colors break-words block mb-1">{SOCIAL_LINKS.email.replace('mailto:', '')}</a>
+                    <a href={SOCIAL_LINKS.secondary_email} className="text-off-white/70 hover:text-accent-light transition-colors break-words block text-sm">{SOCIAL_LINKS.secondary_email.replace('mailto:', '')}</a>
                 </div>
                 
                 <div className="p-6 rounded-2xl bg-accent-deep/20 border border-accent-light/10">
