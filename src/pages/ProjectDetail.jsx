@@ -215,7 +215,7 @@ export function ProjectDetail() {
                             className="px-8 py-4 rounded-full bg-off-white text-bg-dark font-bold hover:bg-primary hover:text-off-white transition-all flex items-center gap-2 group"
                         >
                             <span className="material-symbols-outlined">code</span>
-                            Repository
+                            {t('project_detail.repository')}
                             <span className="material-symbols-outlined opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all">arrow_outward</span>
                         </a>
                     )}
@@ -227,7 +227,7 @@ export function ProjectDetail() {
                             className="px-8 py-4 rounded-full bg-transparent border-2 border-off-white/20 text-off-white font-bold hover:bg-off-white/10 transition-all flex items-center gap-2"
                         >
                             <span className="material-symbols-outlined">rocket_launch</span>
-                            Live Demo
+                            {t('project_detail.demo')}
                         </a>
                     )}
                 </div>
@@ -271,7 +271,7 @@ export function ProjectDetail() {
                     <FadeIn delay={0.2}>
                          <div className="bg-gradient-to-br from-primary/20 to-transparent p-10 rounded-3xl border border-primary/20 relative overflow-hidden group hover:border-primary/40 transition-colors">
                             <span className="material-symbols-outlined text-8xl absolute -right-10 -bottom-10 text-primary/10 rotate-12 group-hover:scale-110 transition-transform">auto_graph</span>
-                             <h3 className="text-primary font-bold tracking-widest uppercase mb-4 text-sm">Business Impact</h3>
+                             <h3 className="text-primary font-bold tracking-widest uppercase mb-4 text-sm">{t('project_detail.impact_title')}</h3>
                              <p className="text-2xl md:text-3xl font-light text-off-white leading-tight">
                                 "{project.impact}"
                              </p>
@@ -287,7 +287,7 @@ export function ProjectDetail() {
                                 <span className="flex items-center justify-center w-10 h-10 rounded-full bg-red-500/10 text-red-500">
                                     <span className="material-symbols-outlined text-xl">bug_report</span>
                                 </span>
-                                The Challenge
+                                {t('project_detail.challenge_title')}
                             </h2>
                             <div className="prose prose-invert prose-lg max-w-none text-off-white/70">
                                 <p>{project.challenge}</p>
@@ -304,7 +304,7 @@ export function ProjectDetail() {
                                 <span className="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-500/10 text-emerald-500">
                                     <span className="material-symbols-outlined text-xl">lightbulb</span>
                                 </span>
-                                Technical Solution
+                                {t('project_detail.solution_title')}
                             </h2>
                             <div className="prose prose-invert prose-lg max-w-none text-off-white/70">
                                 <p>{project.solution}</p>
@@ -316,7 +316,7 @@ export function ProjectDetail() {
                 {/* Modules / Features Grid */}
                 {project.modules && (
                     <FadeIn delay={0.5}>
-                        <h2 className="text-3xl font-bold text-off-white mb-8 border-b border-white/10 pb-4">Key Features & Modules</h2>
+                        <h2 className="text-3xl font-bold text-off-white mb-8 border-b border-white/10 pb-4">{t('project_detail.features_title')}</h2>
                         <div className="grid md:grid-cols-2 gap-6">
                             {project.modules.map((module, i) => (
                                 <div key={i} className="p-5 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors flex items-center gap-4 group">
@@ -336,7 +336,7 @@ export function ProjectDetail() {
                     <div className="bg-zinc-900/80 p-8 rounded-3xl border border-white/10 sticky top-32 backdrop-blur-md">
                         <div className="flex items-center gap-3 mb-8 border-b border-white/10 pb-4">
                             <span className="material-symbols-outlined text-primary">terminal</span>
-                            <h3 className="text-xl font-bold text-off-white">Tech Stack</h3>
+                            <h3 className="text-xl font-bold text-off-white">{t('project_detail.tech_stack_title')}</h3>
                         </div>
                         
                         <div className="space-y-8">
@@ -367,7 +367,7 @@ export function ProjectDetail() {
                         {/* Methodology Badge */}
                         {project.methodology && (
                             <div className="mt-8 pt-6 border-t border-white/10">
-                                <h4 className="text-xs uppercase tracking-widest text-off-white/40 mb-2 font-mono">Methodology</h4>
+                                <h4 className="text-xs uppercase tracking-widest text-off-white/40 mb-2 font-mono">{t('project_detail.methodology_title')}</h4>
                                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold">
                                     <span className="material-symbols-outlined text-base">sync_alt</span>
                                     {project.methodology}
